@@ -1,16 +1,16 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const uglifyjs = require('uglifyjs-webpack-plugin');
 
 export default () => ({
-    // mode: 'production',
-    mode: 'development',
+    mode: 'production',
+    //mode: 'development',
     entry: ['babel-polyfill','./index.js'],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'jsca-kits-1.0.0.js',
         libraryTarget: 'umd',
         globalObject: 'this',
-        // libraryExport: 'default',
         library: 'JscaPKI'
     },
     externals: {
@@ -38,6 +38,7 @@ export default () => ({
         }]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new uglifyjs()
     ]
 });

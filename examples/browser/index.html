@@ -17,60 +17,31 @@
     <script type='text/javascript' src='./axios.min.js'></script>
     <script type='text/javascript' src='./jsca-kits-1.0.0.js'></script>
     <script type='text/javascript'>
-        // var getbook1 = function () {
-        //     return new Promise(function(resolve, reject) {
-        //         axios({
-        //             url: 'http://localhost:3000/users',
-        //             method: 'get',
-        //             params: {
-        //                 type: 2,
-        //                 postid: 1000
-        //             }
-        //         }).then(function (res) {
-        //             resolve(res.data);
-        //         }).catch(function (error) {
-        //             reject(error);
-        //         })
-        //     })
-        // }
-
-        // getbook1().then(function(data){
-        //     console.log(data);
-        //     document.getElementById('root3').innerHTML = data[0].password
-        // })
-
-        document.getElementById('root').innerHTML = " Results: add(1,2) === " + JscaPKI.add(1, 2);
-        JscaPKI.multiply(100).then(function (data) {
-            //console.log("data=" + data);
-            document.getElementById('root2').innerHTML = data
-        });
-        JscaPKI.getbook2().then(function (data) {
+      
+        JscaPKI.getJsca('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
                 console.log("data1=" + JSON.stringify(data));
-                // document.getElementById('root3').innerHTML = data
             }, function (error) {
                 console.log(error)
                 alert(error.status);
             }
-
         );
 
-        var o = {
-            url:'SOF_GetVersion'
-        }
-        console.log(JSON.stringify(o))
+        JscaPKI.getGxca('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
+                console.log("data1=" + JSON.stringify(data));
+            }, function (error) {
+                console.log(error)
+                alert(error.status);
+            }
+        );
 
-        // axios({
-        //     url: 'http://localhost:3000/users',
-        //     method: 'get',
-        //     params: {
-        //         type: 2,
-        //         postid: 1000
-        //     }
-        // }).then(function (res) {
-        //     console.log(res.data);
-        // }).catch(function (error) {
-        //     console.log(error);
-        // })
+        JscaPKI.getCalibx('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
+                console.log("data1=" + JSON.stringify(data));
+            }, function (error) {
+                console.log(error)
+                alert(error.status);
+            }
+        );
+
     </script>
 </body>
 
