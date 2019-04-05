@@ -5,7 +5,7 @@ const uglifyjs = require('uglifyjs-webpack-plugin');
 export default () => ({
     mode: 'production',
     //mode: 'development',
-    entry: ['babel-polyfill','./index.js'],
+    entry: ['babel-polyfill','./src/index.js'],
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'jsca-kits-1.0.0.js',

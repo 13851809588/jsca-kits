@@ -12,4 +12,4 @@ var out = function() {
             }
         );
 };
-out();g
+out();
