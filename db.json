@@ -1,8 +1,28 @@
 {
-    "users": [{
-        "accuontNumber": "12345678900",
-        "password": "000000",
-        "emial": "000000",
-        "id": 1
-    }]
+  "users": [
+    {
+      "accuontNumber": "12345678900",
+      "password": "000000",
+      "emial": "000000",
+      "id": 1
+    },
+    {
+      "{\"type\":2,\"postid\":1000}": "",
+      "id": 2
+    },
+    {
+      "{\"type\":2,\"postid\":1000}": "",
+      "id": 3
+    },
+    {
+      "type": "2",
+      "postid": "1000",
+      "id": 4
+    },
+    {
+      "type": "2",
+      "postid": "1000",
+      "id": 5
+    }
+  ]
 }
