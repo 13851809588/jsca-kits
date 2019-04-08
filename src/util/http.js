@@ -3,8 +3,8 @@ import Promise from 'bluebird';
 import qs from 'qs';
 
 const http = axios.create({
-    timeout: 1000 * 30,
-    withCredentials: true
+    timeout: 1000 * 60,
+    withCredentials: false
 })
 
 /**
@@ -32,12 +32,10 @@ http.interceptors.response.use(response => {
 /**
  * http get 方式
  */
-http.get = (url, params,contenType) => {
+http.get = (url, params,contentType) => {
     params = params === undefined ? {} : params;
-    const type = contenType === undefined ? 'json' : contenType;
+    const type = contentType === undefined ? 'json' : "form";
     params = type === 'json' ? JSON.stringify(params) : qs.stringify(params);
-    console.log(type);
-    console.log(params);
 
     return new Promise((resolve, reject) => {
         http({
@@ -57,13 +55,10 @@ http.get = (url, params,contenType) => {
 /**
  * http post 方式
  */
-http.post = (url, params, contenType) => {
+http.post = (url, params, contentType) => {
     params = params === undefined ? {} : params;
-    const type = contenType === undefined ? 'json' : contenType;
+    const type = contentType === undefined ? 'json' : "form";
     params = type === 'json' ? JSON.stringify(params) : qs.stringify(params);
-
-    console.log(type);
-    console.log(params);
 
     return new Promise((resolve, reject) => {
         http({

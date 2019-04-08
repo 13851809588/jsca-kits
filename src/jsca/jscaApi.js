@@ -1,11 +1,104 @@
-import http from '../util/http'
+import http from "../util/http";
+import merge from "lodash/merge";
+import $ from "jquery";
 
 const jscaApi = {
+  // 获取接口版本信息
+  getVersion(url, params) {
+    let defaults = {
+      url: "GetVersion"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
 
-    signdata(url,data){
-        return http.get(url,data);
-    }
+  // 证书登录
+  login(url, params) {
+    let defaults = {
+      url: "login"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
 
-}
+  // 设置签名算法
+  setSignMethod(url, params) {
+    let defaults = {
+      url: "SetSignMethod"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
 
-export default jscaApi
+  // 获得当前签名算命
+  getSignMethod(url, params) {
+    let defaults = {
+      url: "GetSignMethod"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  // 获得证书列表
+  getUserList(url, params) {
+    let defaults = {
+      url: "GetUserList"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  // 导出用户证书
+  exportUserCert(url, params) {
+    let defaults = {
+      url: "ExportUserCert"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  signData(url, params) {
+    let defaults = {
+      url: "SignData"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  async synctest(url, params) {
+    let obj = {name:"yajun"};
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        console.log("run timeout.....");
+        resolve("timeout");
+      }, 1000 * 20);
+    });
+    console.log(" timout end.....")
+    return obj;
+  },
+
+  ajaxTest(url, params) {
+    let defaults = {
+      url: "GetVersion"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        type: "POST",
+        url: url,
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function(data) {
+          console.log(data);
+          resolve(data);
+        },
+        error: function(error) {
+          console.log(error);
+          reject(error);
+        }
+      });
+    });
+  }
+};
+
+export default jscaApi;

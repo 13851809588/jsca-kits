@@ -17,30 +17,68 @@
     <script type='text/javascript' src='./axios.min.js'></script>
     <script type='text/javascript' src='./jsca-kits-1.0.0.js'></script>
     <script type='text/javascript'>
-      
-        JscaPKI.getJsca('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
-                console.log("data1=" + JSON.stringify(data));
-            }, function (error) {
-                console.log(error)
-                alert(error.status);
-            }
-        );
+        var userCert = "";
+        var signedData = "";
+        // JscaPKI.getVersion('http://localhost:8000/caclient'
+        // ).then(function (data) {
+        //         console.log("data1=" + JSON.stringify(data));
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
 
-        JscaPKI.getGxca('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
-                console.log("data1=" + JSON.stringify(data));
-            }, function (error) {
-                console.log(error)
-                alert(error.status);
-            }
-        );
+        // JscaPKI.login('http://localhost:8000/caclient'
+        // ).then(function (data) {
+        //         console.log("data1=" + JSON.stringify(data));
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
 
-        JscaPKI.getCalibx('http://localhost:3000/users',{type:2,postid:1000}).then(function (data) {
-                console.log("data1=" + JSON.stringify(data));
-            }, function (error) {
-                console.log(error)
-                alert(error.status);
-            }
-        );
+        // JscaPKI.getUserList('http://localhost:8000/caclient'
+        // ).then(function (data) {
+        //         console.log("data=" + JSON.stringify(data));
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
+
+        console.log(JscaPKI.syncTest());
+
+        console.log("test async");
+
+        // JscaPKI.signData('http://localhost:8000/caclient',{CertID:'2017101703475846',inData:'testdata'}
+        // ).then(function (data) {
+        //         console.log("signData:" + JSON.stringify(data));
+        //         signedData = data.SignData;
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
+
+        // JscaPKI.exportUserCert('http://localhost:8000/caclient',{CertID:'2017101703475846'}
+        // ).then(function (data) {
+        //         console.log("exportUserCert:" + JSON.stringify(data));
+        //         userCert = data.UserCert;
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
+
+        // JscaPKI.verifySignedData('http://localhost:8000/caclient',{cert:userCert}
+        // ).then(function (data) {
+        //         console.log("exportUserCert:" + JSON.stringify(data));
+        //         userCert = data.UserCert;
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
 
     </script>
 </body>

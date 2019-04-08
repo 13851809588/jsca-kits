@@ -3,8 +3,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const uglifyjs = require('uglifyjs-webpack-plugin');
 
 export default () => ({
-    mode: 'production',
-    //mode: 'development',
+    //mode: 'production',
+    mode: 'development',
     entry: ['babel-polyfill','./src/index.js'],
     output: {
         path: path.resolve(__dirname, './dist'),

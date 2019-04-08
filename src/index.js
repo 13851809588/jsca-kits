@@ -1,21 +1,42 @@
-import jscaApi from './jsca/jscaApi'
-import gxcaApi from './gxca/gxcaApi'
-import calibxApi from './calibx/calibxApi'
+import jscaApi from "./jsca/jscaApi";
+import gxcaApi from "./gxca/gxcaApi";
+import calibxApi from "./calibx/calibxApi";
 
-const getJsca = (url,params) => {
-    return jscaApi.signdata(url,params);
+const getVersion = (url, params) => {
+  return jscaApi.getVersion(url, params);
+};
+
+const login = (url, params) => {
+  return jscaApi.login(url, params);
+};
+
+const signData = (url,params) =>{
+    return jscaApi.signData(url,params);
 }
 
-const getGxca = (url,params) => {
-    return gxcaApi.signdata(url,params);
+const getUserList =  (url,params) =>{
+    return jscaApi.getUserList(url,params);
 }
 
-const getCalibx = (url,params) => {
-    return calibxApi.signdata(url,params);
+const exportUserCert = (url,params) =>{
+    return jscaApi.exportUserCert(url,params);
 }
+
+const syncTest = (url,params) =>{
+    jscaApi.synctest(url,params);
+    console.log("kkkkkk")
+}
+
+const test = (url, params) => {
+  return jscaApi.signData(url, params);
+};
 
 export default {
-    getJsca,
-    getGxca,
-    getCalibx
+  getVersion,
+  login,
+  getUserList,
+  exportUserCert,
+  signData,
+  syncTest,
+  test
 };
