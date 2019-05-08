@@ -30,10 +30,28 @@ const jscaApi = {
     return http.post(url, params);
   },
 
-  // 获得当前签名算命
+  // 获得当前签名算法
   getSignMethod(url, params) {
     let defaults = {
       url: "GetSignMethod"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  // 设置加密算法
+  SetEncryptMethod(url, params){
+    let defaults = {
+      url: "SetEncryptMethod"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    return http.post(url, params);
+  },
+
+  // 获得加密算法
+  GetEncryptMethod(url, params){
+    let defaults = {
+      url: "GetEncryptMethod"
     };
     params = params ? merge(defaults, params) : defaults;
     return http.post(url, params);
@@ -48,7 +66,7 @@ const jscaApi = {
     return http.post(url, params);
   },
 
-  // 导出用户证书
+  // 导出用户签名证书
   exportUserCert(url, params) {
     let defaults = {
       url: "ExportUserCert"
@@ -57,6 +75,7 @@ const jscaApi = {
     return http.post(url, params);
   },
 
+  // PKCS#1签名
   signData(url, params) {
     let defaults = {
       url: "SignData"

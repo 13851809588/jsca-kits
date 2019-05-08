@@ -4,11 +4,11 @@ import calibxApi from "./calibx/calibxApi";
 
 const getVersion = (url, params) => {
   return jscaApi.getVersion(url, params);
-};
+}
 
 const login = (url, params) => {
   return jscaApi.login(url, params);
-};
+}
 
 const signData = (url,params) =>{
     return jscaApi.signData(url,params);

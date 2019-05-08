@@ -46,21 +46,20 @@
         //     }
         // );
 
-        console.log(JscaPKI.syncTest());
+        // console.log(JscaPKI.syncTest());
 
-        console.log("test async");
+        JscaPKI.signData('http://localhost:8000/caclient',{CertID:'2018092504461784',InData:'testdata'}
+        ).then(function (data) {
+                console.log("signData:" + JSON.stringify(data));
+                signedData = data.SignData;
+                console.log("signedData:" + data)
+            }, function (error) {
+                console.log(error)
+                alert(error.status);
+            }
+        );
 
-        // JscaPKI.signData('http://localhost:8000/caclient',{CertID:'2017101703475846',inData:'testdata'}
-        // ).then(function (data) {
-        //         console.log("signData:" + JSON.stringify(data));
-        //         signedData = data.SignData;
-        //     }, function (error) {
-        //         console.log(error)
-        //         alert(error.status);
-        //     }
-        // );
-
-        // JscaPKI.exportUserCert('http://localhost:8000/caclient',{CertID:'2017101703475846'}
+        // JscaPKI.exportUserCert('http://localhost:8000/caclient',{CertID:'2018092504461784'}
         // ).then(function (data) {
         //         console.log("exportUserCert:" + JSON.stringify(data));
         //         userCert = data.UserCert;
@@ -69,6 +68,17 @@
         //         alert(error.status);
         //     }
         // );
+
+        // JscaPKI.login('http://localhost:8000/caclient',{}
+        // ).then(function (data) {
+        //         console.log("data:" + JSON.stringify(data));
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
+
+        
 
         // JscaPKI.verifySignedData('http://localhost:8000/caclient',{cert:userCert}
         // ).then(function (data) {
