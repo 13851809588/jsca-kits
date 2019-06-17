@@ -1,10 +1,17 @@
-import http from '../util/http'
+import websocket from '../util/socket'
 
 const gxcaApi = {
-
-    signdata(url,data){
-        return http.get(url,data);
-    }
+  getVersion(params) {
+    let defaults = {
+      method: "gxGetVersion"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    websocket.sendMsg(params,function(data){
+      new Promise(function(resolve, reject) {
+        return resolve(data);
+      })
+    })
+  }
 
 }
 

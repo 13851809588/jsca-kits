@@ -31,6 +31,10 @@ const test = (url, params) => {
   return jscaApi.signData(url, params);
 };
 
+const getGxVersion = (params) => {
+  return jscaApi.getGxVersion();
+}
+
 export default {
   getVersion,
   login,
@@ -38,5 +42,6 @@ export default {
   exportUserCert,
   signData,
   syncTest,
-  test
+  test,
+  getGxVersion
 };

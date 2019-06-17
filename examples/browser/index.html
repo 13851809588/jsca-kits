@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>webpack library example - Transalating numbers</title>
     <!-- <script type='text/javascript' src='https://unpkg.com/jquery@3.3.1'></script> -->
 </head>
@@ -48,16 +49,16 @@
 
         // console.log(JscaPKI.syncTest());
 
-        JscaPKI.signData('http://localhost:8000/caclient',{CertID:'2018092504461784',InData:'testdata'}
-        ).then(function (data) {
-                console.log("signData:" + JSON.stringify(data));
-                signedData = data.SignData;
-                console.log("signedData:" + data)
-            }, function (error) {
-                console.log(error)
-                alert(error.status);
-            }
-        );
+        // JscaPKI.signData('http://localhost:8000/caclient',{CertID:'2018092504461784',InData:'testdata'}
+        // ).then(function (data) {
+        //         console.log("signData:" + JSON.stringify(data));
+        //         signedData = data.SignData;
+        //         console.log("signedData:" + signedData)
+        //     }, function (error) {
+        //         console.log(error)
+        //         alert(error.status);
+        //     }
+        // );
 
         // JscaPKI.exportUserCert('http://localhost:8000/caclient',{CertID:'2018092504461784'}
         // ).then(function (data) {
@@ -89,6 +90,14 @@
         //         alert(error.status);
         //     }
         // );
+
+        JscaPKI.getGxVersion()
+        .then(function (data) {
+              console.log("version:" + JSON.stringify(data.resultMSG));
+            }, function (error) {
+                console.log(error)
+            }
+        );
 
     </script>
 </body>

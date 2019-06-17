@@ -1,4 +1,5 @@
 import http from "../util/http";
+import * as socketApi from '../util/socket';
 import merge from "lodash/merge";
 import $ from "jquery";
 
@@ -117,7 +118,21 @@ const jscaApi = {
         }
       });
     });
+  },
+
+  getGxVersion(params) {
+    let defaults = {
+      method: "gxGetVersion"
+    };
+    params = params ? merge(defaults, params) : defaults;
+    socketApi.sendMsg(params,function(data){
+      return new Promise(function(resolve, reject) {
+        console.log(data);
+        resolve(data);
+      })
+    })
   }
+
 };
 
 export default jscaApi;
