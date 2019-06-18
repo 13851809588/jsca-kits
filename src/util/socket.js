@@ -1,5 +1,6 @@
 var websock = null;
-var callback = null;
+//作为获取数据的回调对象存储
+var messageList = {};
 const ws_url = "ws://127.0.0.1:9005/";
 
 function init () {
@@ -19,9 +20,11 @@ function init () {
   }
 }
 
-const sendMsg = function(data, func) {
-  callback = func
+const sendMsg = function(data, callback) {
+  const funcName = data.method;
   if (websock.readyState === websock.OPEN) {
+    //存储事件
+    messageList[funcName] = callback;
     // 若是ws开启状态
     websocketSend(data)
   } else if (websock.readyState === websock.CONNECTING) {
@@ -39,7 +42,11 @@ const sendMsg = function(data, func) {
 
 // 数据接收
 function websocketOnmessage (e) {
-  callback(JSON.parse(e.data))
+  //处理各种推送消息
+  const message = JSON.parse(e.data);
+  const funcName = message.fucName;
+  //执行回调
+  messageList[funcName](message);
 }
 
 // 数据发送

@@ -31,8 +31,16 @@ const test = (url, params) => {
   return jscaApi.signData(url, params);
 };
 
+const synctest = (params) => {
+  return gxcaApi.synctest();
+};
+
 const getGxVersion = (params) => {
-  return jscaApi.getGxVersion();
+  return gxcaApi.getVersion();
+};
+
+const gxGenRandom = (params) => {
+  return gxcaApi.gxGenRandom(params);
 }
 
 export default {
@@ -43,5 +51,6 @@ export default {
   signData,
   syncTest,
   test,
-  getGxVersion
+  getGxVersion,
+  gxGenRandom
 };

@@ -93,8 +93,7 @@ const jscaApi = {
         resolve("timeout");
       }, 1000 * 20);
     });
-    console.log(" timout end.....")
-    return obj;
+    console.log(" timout end.....");
   },
 
   ajaxTest(url, params) {
@@ -118,19 +117,6 @@ const jscaApi = {
         }
       });
     });
-  },
-
-  getGxVersion(params) {
-    let defaults = {
-      method: "gxGetVersion"
-    };
-    params = params ? merge(defaults, params) : defaults;
-    socketApi.sendMsg(params,function(data){
-      return new Promise(function(resolve, reject) {
-        console.log(data);
-        resolve(data);
-      })
-    })
   }
 
 };

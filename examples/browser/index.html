@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>webpack library example - Transalating numbers</title>
     <!-- <script type='text/javascript' src='https://unpkg.com/jquery@3.3.1'></script> -->
 </head>
@@ -90,7 +90,7 @@
         //         alert(error.status);
         //     }
         // );
-
+        console.log("getGxVersion start.....")
         JscaPKI.getGxVersion()
         .then(function (data) {
               console.log("version:" + JSON.stringify(data.resultMSG));
@@ -98,6 +98,16 @@
                 console.log(error)
             }
         );
+        console.log("getGxVersion end......")
+        console.log("gxGenRandom start......")
+        JscaPKI.gxGenRandom({randlen:10})
+        .then(function (data) {
+              console.log("Random:" + JSON.stringify(decodeURIComponent(data.resultMSG)));
+            }, function (error) {
+                console.log(error)
+            }
+        );
+        console.log("gxGenRandom end.....")
 
     </script>
 </body>
