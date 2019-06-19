@@ -11,7 +11,7 @@
     <div id="root3"></div>
     <script type="text/javascript" src="./jquery.min.js"></script>
     <script type="text/javascript" src="./bluebird.min.js"></script>
-    <script type="text/javascript" src="./axios.min.js"></script>
+    <script type="text/javascript" src="./axios.min.js"></script>0
     <script type="text/javascript" src="./jsca-kits-1.0.0.js"></script>
     <script type="text/javascript">
       var userCert = "";
@@ -24,6 +24,7 @@
       //         alert(error.status);
       //     }
       // );
+      
 
       // JscaPKI.login('http://localhost:8000/caclient'
       // ).then(function (data) {
@@ -95,106 +96,106 @@
       );
       console.log("getGxVersion end......");
       
-      //sleep(2000);
-      console.log("gxGenRandom start......");
-      JscaPKI.gxGenRandom({ randlen: 10 }).then(
-        function(data) {
-          console.log("Random:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
-      console.log("gxGenRandom end.....");
+      // //sleep(2000);
+      // console.log("gxGenRandom start......");
+      // JscaPKI.gxGenRandom({ randlen: 10 }).then(
+      //   function(data) {
+      //     console.log("Random:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
+      // console.log("gxGenRandom end.....");
 
-      JscaPKI.put_debug({ debugData: 1 }).then(
-        function(data) {
-          console.log("put_debug:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.put_debug({ debugData: 1 }).then(
+      //   function(data) {
+      //     console.log("put_debug:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
       
-      JscaPKI.ShowErrMsg({ debugData: 1 }).then(
-        function(data) {
-          console.log("ShowErrMsg:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.ShowErrMsg({ debugData: 1 }).then(
+      //   function(data) {
+      //     console.log("ShowErrMsg:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.get_B64Signature().then(
-        function(data) {
-          console.log("get_B64Signature:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.get_B64Signature().then(
+      //   function(data) {
+      //     console.log("get_B64Signature:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.get_B64Certificate().then(
-        function(data) {
-          console.log("get_B64Certificate:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.get_B64Certificate().then(
+      //   function(data) {
+      //     console.log("get_B64Certificate:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.put_B64Certificate().then(
-        function(data) {
-          console.log("put_B64Certificate:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.put_B64Certificate().then(
+      //   function(data) {
+      //     console.log("put_B64Certificate:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.get_B64Input().then(
-        function(data) {
-          console.log("get_B64Input:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.get_B64Input().then(
+      //   function(data) {
+      //     console.log("get_B64Input:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.put_SelectCertAlways().then(
-        function(data) {
-          console.log("put_SelectCertAlways:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.put_SelectCertAlways().then(
+      //   function(data) {
+      //     console.log("put_SelectCertAlways:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.put_FingerPrint().then(
-        function(data) {
-          console.log("put_FingerPrint:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.put_FingerPrint().then(
+      //   function(data) {
+      //     console.log("put_FingerPrint:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      JscaPKI.gxPKCS1({srcdata:'QQ==测试',datatype:1})
-      .then(
-        function(data) {
-          console.log("get_B64Signature:" + JSON.stringify(data));
-        },
-        function(error) {
-          console.log(error);
-        }
-      );
+      // JscaPKI.gxPKCS1({srcdata:'QQ==测试',datatype:1})
+      // .then(
+      //   function(data) {
+      //     console.log("get_B64Signature:" + JSON.stringify(data));
+      //   },
+      //   function(error) {
+      //     console.log(error);
+      //   }
+      // );
 
-      function sleep(delay) {
-        var start = new Date().getTime();
-        while (new Date().getTime() - start < delay) {
-          continue;
-        }
-      }
+      // function sleep(delay) {
+      //   var start = new Date().getTime();
+      //   while (new Date().getTime() - start < delay) {
+      //     continue;
+      //   }
+      // }
       
     </script>
   </body>

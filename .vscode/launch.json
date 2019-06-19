@@ -5,11 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "本地chrome调试",
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
-      "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}"
+      "url": "${workspaceFolder}/examples/browser/index.html",
+      //"runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}",
+      //"userDataDir":"${tmpdir}",
+      //"port":5433
+    },
+    {
+      "name": "本地调试js",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/src/test.js",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "runtimeExecutable": null,
+      "runtimeArgs": ["--nolazy"],
+      "env": { "NODE_ENV": "development" },
+      "console": "internalConsole",
+      "preLaunchTask": "",
+      "sourceMaps": false
     }
+
   ]
 }

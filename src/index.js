@@ -1,6 +1,5 @@
-import jscaApi from "./jsca/jscaApi";
 import gxcaApi from "./gxca/gxcaApi";
-import calibxApi from "./calibx/calibxApi";
+import jscaApi from "./jsca/jscaApi";
 
 const getVersion = (url, params) => {
   return jscaApi.getVersion(url, params);
@@ -29,10 +28,6 @@ const syncTest = (url, params) => {
 
 const test = (url, params) => {
   return jscaApi.signData(url, params);
-};
-
-const synctest = params => {
-  return gxcaApi.synctest();
 };
 
 const getGxVersion = params => {
