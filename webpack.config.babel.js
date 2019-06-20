@@ -39,6 +39,10 @@ export default () => ({
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new uglifyjs()
+        new uglifyjs({
+          uglifyOptions: {
+            ie8: true,
+          }
+        })
     ]
 });
